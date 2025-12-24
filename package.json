@@ -1,0 +1,17 @@
+{
+  "name": "ts-practice",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+    "scripts": {
+      "start": "bun run index.ts",
+      "dev": "bun --watch index.ts",
+      "type-check": "tsc --noEmit"
+    }
+}
