@@ -97,13 +97,13 @@ console.log(User2.getRoleInfo());
 User1.updateStatus(OrderStatus.PROCESSING);
 console.log(OrderStatus[User2.status]);
 
-interface User {
+interface User2 {
   id: number,
   name: string,
   email?: string
 }
 
-const userObj: User = {
+const userObj: User2 = {
   id: 5,
   name: "johnny",
   email: "johnnyboy822@gmail.com"
@@ -118,3 +118,28 @@ console.log(userId, firstName, userEmail);
 const identifierName: string = "Alex";
 //const {age = 7, codeName = identifierName} = userObj;
 //console.log(age, codeName);
+
+
+const arrowAdd = (a: number, b: number): number => a + b;
+const arrowGreet = (name: string): string => `Hello ${name}`;
+const arrowDouble = (a: number): number => a * 2;
+
+console.log(arrowAdd(6, 8));
+console.log(arrowGreet("Kiwi Araga"));
+console.log(arrowDouble(5));
+
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+
+console.log(arr2);
+
+interface TestObj {
+  name: string,
+  age: number,
+  email?: string
+}
+
+const obj1: TestObj = {name: "kiwi", age: 19};
+const obj2: TestObj = { ...obj1, email: "kiwiaraga19@gmail.com"};
+
+console.log(obj2);
