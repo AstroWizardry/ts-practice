@@ -97,15 +97,16 @@ console.log(User2.getRoleInfo());
 User1.updateStatus(OrderStatus.PROCESSING);
 console.log(OrderStatus[User2.status]);
 
-interface User2 {
+interface User {
   id: number,
   name: string,
   email?: string
 }
 
-const userObj: User2 = {
+const userObj: User = {
   id: 5,
   name: "johnny",
+  role: UserRole.ADMIN,
   email: "johnnyboy822@gmail.com"
 }
 
@@ -143,3 +144,24 @@ const obj1: TestObj = {name: "kiwi", age: 19};
 const obj2: TestObj = { ...obj1, email: "kiwiaraga19@gmail.com"};
 
 console.log(obj2);
+
+const arrNumbers = [1, 2, 4, 5, 6, 7, 9];
+const arrDoubled = arrNumbers.map(n => n * 2);
+const arrEvened = arrNumbers.filter(n => n % 2 === 0);
+const arrSum = arrNumbers.reduce((acc, n) => acc + n, 0);
+
+console.log(`our Array is ${arrNumbers}, Doubled is ${arrDoubled}.. filtering the even nums ${arrEvened} and sum of every num in the arr is ${arrSum}`);
+
+interface Company {
+  name: string;
+  address?: {
+    street?: string;
+    city?: string;
+  };
+}
+
+const company: Company = { name: "Acme" };
+const city: string = company.address?.city ?? "";
+const street: string = company.address?.street?.toUpperCase() ?? "";
+
+console.log(city, street);
