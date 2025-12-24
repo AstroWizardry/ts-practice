@@ -97,16 +97,15 @@ console.log(User2.getRoleInfo());
 User1.updateStatus(OrderStatus.PROCESSING);
 console.log(OrderStatus[User2.status]);
 
-interface User {
+interface UserExmp {
   id: number,
   name: string,
   email?: string
 }
 
-const userObj: User = {
+const userObj: UserExmp = {
   id: 5,
   name: "johnny",
-  role: UserRole.ADMIN,
   email: "johnnyboy822@gmail.com"
 }
 
@@ -160,8 +159,24 @@ interface Company {
   };
 }
 
+
 const company: Company = { name: "Acme" };
 const city: string = company.address?.city ?? "";
 const street: string = company.address?.street?.toUpperCase() ?? "";
 
 console.log(city, street);
+
+const user2 = {
+  id: 4,
+  name: "kiwi",
+  role: "Guest",
+}
+const admin = user2.role === UserRole.ADMIN && "Is Admin";
+const displayName = user2.name || "Guest";
+const isValid = user2 && user2.id && user2.name;
+
+
+const status = user2.role === UserRole.ADMIN ? "admin" : "user";
+const testMessage = count > 0 ? `Count: ${count}` : "No items";
+
+console.log(status, displayName, isValid, status, testMessage);
